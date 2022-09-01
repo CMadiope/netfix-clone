@@ -12,6 +12,7 @@ fetch(
       fetchMoviesListByGenres(item.id, item.name);
     });
   });
+
 const fetchMoviesListByGenres = (id, genres) => {
   fetch(
     movie_genres_http +
@@ -30,20 +31,14 @@ const fetchMoviesListByGenres = (id, genres) => {
 
 const makeCategoryElement = (category, data) => {
   main.innerHTML += `
-  <div class="movie-list">
-
-        <button class="pre-btn"><img src="img/back.png" alt=""></button>
-
+    <div class="movie-list">
+        <button class="pre-btn"><img src="img/pre.png" alt=""></button>
         <h1 class="movie-category">${category.split("_").join(" ")}</h1>
-
         <div class="movie-container" id="${category}">
-
         </div>
-
-        <button class="nxt-btn"><img src="img/next.png" alt=""></button>
-
+        <button class="nxt-btn"><img src="img/nxt.png" alt=""></button>
     </div>
-  `;
+    `;
   makeCards(category, data);
 };
 
